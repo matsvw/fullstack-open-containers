@@ -1,0 +1,50 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260106132048
+Username: MATS-IDEAPAD\matsw
+RunAs User: MATS-IDEAPAD\matsw
+Configuration Name: 
+Machine: MATS-IDEAPAD (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\matsw\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 16092
+PSVersion: 5.1.26100.7462
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.7462
+BuildVersion: 10.0.26100.7462
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is session.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cmatsw\x5csource\x5crepos\x5cfullstack-open-containersPS C:\Users\matsw\source\repos\fullstack-open-containers> ]633;B
+PS>docker run -it ubuntu bash
+
+*** Note! - Start-Transcript did not work as expected. It did not capture any commands executed within the container. Below is what I ran. ***
+
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+97dd3f0ce510: Pull complete
+588d79ce2edd: Download complete
+Digest: sha256:c35e29c9450151419d9448b0fd75374fec4fff364a27f176fb458d472dfc9e54
+Status: Downloaded newer image for ubuntu:latest
+root@ca394705d913:/# ls -a
+.  ..  .dockerenv  bin  boot  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@ca394705d913:/# mkdir usr/src/app
+root@ca394705d913:/# cd usr/src/app
+root@ca394705d913:/usr/src/app# ls -a
+.  ..
+root@ca394705d913:/usr/src/app# touch index.js
+root@ca394705d913:/usr/src/app# ls -a
+.  ..  index.js
+root@ca394705d913:/usr/src/app# exit
+exit
+
+*** End of manually copied commands ***
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cmatsw\x5csource\x5crepos\x5cfullstack-open-containersPS C:\Users\matsw\source\repos\fullstack-open-containers> ]633;B
+PS>Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20260106132417
+**********************

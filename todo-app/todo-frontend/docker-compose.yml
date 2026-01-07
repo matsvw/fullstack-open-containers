@@ -1,0 +1,11 @@
+services:
+  app:
+    image: hello-front-prod
+    build:
+      context: . # The context will pick this directory as the "build context"
+      dockerfile: Dockerfile # This will simply tell which dockerfile to read
+    ports:
+      - 5173:80
+    container_name: hello-front-prod # This will name the container hello-front-dev
+  debug-helper:
+    image: busybox

@@ -10,4 +10,4 @@ services:
       - 5173:5173
     container_name: hello-front-dev # This will name the container hello-front-dev
   debug-helper:
-    image: busybox    
+    image: busybox

@@ -1,0 +1,33 @@
+services:
+  mongo:
+    extends:
+      file: ./todo-backend/docker-compose.dev.yml
+      service: mongo
+  redis:
+    extends:
+      file: ./todo-backend/docker-compose.dev.yml
+      service: redis
+  backend:
+    extends:
+      file: ./todo-backend/docker-compose.dev.yml
+      service: app
+    depends_on:
+      - mongo
+      - redis
+  frontend:
+    extends:
+      file: ./todo-frontend/docker-compose.dev.yml
+      service: app
+    depends_on:
+      - backend
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - frontend
+  debug-helper:
+    image: busybox          

@@ -1,95 +1,360 @@
 Script started on 2026-01-07 10:28:09+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="139" LINES="21"]
 # mongosh
-Current Mongosh Log ID: 695e355fcf4522db743
-f118b
-Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10
-Using MongoDB:          undefined
-Using Mongosh:          2.5.10
+]0;mongosh mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	695e355fcf4522db743f118b
+Connecting to:		[1m[32mmongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10[0m
+Using MongoDB:		undefined
+[1m[33mUsing Mongosh[0m:		2.5.10
 
 For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
 
 
-To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-pol
-icy).
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
 You can opt-out by running the disableTelemetry() command.
 
-test> show dbs
-Uncaught
-test> exit
-# mongosh -u root -p example
-Current Mongosh Log ID: 695e35a9402
-54f028c3f118b
-Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh
-+2.5.10
-Using MongoDB:          8.2.3
-Using Mongosh:          2.5.10
+[1G[0J [1G[?2004h[1G[0Jtest> [7Gshow dbs
+
+Uncaught 
+[1m[31mMongoServerError[0m[1m[31m[Unauthorized][0m: Command listDatabases requires authentication
+[1G[0Jtest> [7Gexit
+
+[?2004l# mongus  osh -u root p -p example
+]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	695e35a940254f028c3f118b
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10[0m
+Using MongoDB:		8.2.3
+[1m[33mUsing Mongosh[0m:		2.5.10
 
 For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
 
-------
-   The server generated these startup warnings when booting
-   2026-01-07T10:27:03.375+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mo
-ngodb.org/core/prodnotes-filesystem
-   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sys
-fsFile
-   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sys
-fsFile
+[1G[0J [1G[?2004h[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2026-01-07T10:27:03.375+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
    2026-01-07T10:27:03.757+00:00: We suggest setting the contents of sysfsFile to 0.
    2026-01-07T10:27:03.757+00:00: vm.max_map_count is too low
    2026-01-07T10:27:03.757+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
---------(13%)
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         12.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   40.00 KiB
+[1G[0Jtest> [7Guse the-da[1G[0Jtest> use the-d[16G[1G[0Jtest> use the-[15G[1G[0Jtest> use the[14G_database
+
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.insertOne()[1G[0Jthe_database> db.todos.insertOne([34G{ text [32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m [32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone[33mdone[39m: fals[33mfalse[39m })
+
+Uncaught:
+
+[1m[31mSyntaxError[0m: Unexpected token, expected "," (1:26)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39mtodos[33m.[39minsertOne({ text [32m"Increase the number of tools in my tool belt"[39m[33m,[39m done[33m:[39m [36mfalse[39m })
+ [90m   |[39m                           [31m[1m^[22m[39m
+ [90m 2 |[39m[0m
+
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[103G[1D[1G[0Jthe_database> db.todos.insertOne[44m([49m{ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[102G[1D[1G[0Jthe_database> db.todos.insertOne([44m{[49m text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[101G[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[100G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({ text [44m[32m"[49mIncrease the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[86G[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[85G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt[44m"[39m[49m, [33mdone[39m: [33mfalse[39m })[41G[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[40G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[41G[63C
+
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'695e363940254f028c3f118c'[39m)
+}
+[1G[0Jthe_database> [15Gdb.todos.find()
+
+[
+  {
+    _id: ObjectId([32m'695e34f61efceca2b53f118c'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'695e34f61efceca2b53f118d'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'695e363940254f028c3f118c'[39m),
+    text: [32m'Increase the number of tools in my tool belt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+
+[?2004l# nano typescript
+sh: 3: nano: not found
+# cat typescript
+Script started on 2026-01-07 10:28:09+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="139" LINES="21"]
+# mongosh
+
+]0;mongosh mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	695e355fcf4522db743f118b
+
+Connecting to:		[1m[32mmongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10[0m
+
+Using MongoDB:		undefined
+
+[1m[33mUsing Mongosh[0m:		2.5.10
 
 
-admin         100.00 KiB
-config         12.00 KiB
-local          72.00 KiB
-the_database   40.00 KiB
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+
+You can opt-out by running the disableTelemetry() command.
+
+
+
+[1G[0J [1G[?2004h[1G[0Jtest> [7Gshow dbs
+
+
+Uncaught 
+[1m[31mMongoServerError[0m[1m[31m[Unauthorized][0m: Command listDatabases requires authentication
+
+[1G[0Jtest> [7Gexit
+
+
+[?2004l# mongus  osh -u root p -p example
+
+]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	695e35a940254f028c3f118b
+
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10[0m
+
+Using MongoDB:		8.2.3
+
+[1m[33mUsing Mongosh[0m:		2.5.10
+
+
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+
+   [1m[33mThe server generated these startup warnings when booting[0m
+
+   2026-01-07T10:27:03.375+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+
+   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+
+   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+
+   2026-01-07T10:27:03.757+00:00: We suggest setting the contents of sysfsFile to 0.
+
+   2026-01-07T10:27:03.757+00:00: vm.max_map_count is too low
+
+   2026-01-07T10:27:03.757+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+
+[1m[33m------[0m
+
+
+
+[1G[0Jtest> [7Gshow dbs
+
+
+[1madmin[0m         100.00 KiB
+
+[1mconfig[0m         12.00 KiB
+
+[1mlocal[0m          72.00 KiB
+
+[1mthe_database[0m   40.00 KiB
+
+[1G[0Jtest> [7Guse the-da[1G[0Jtest> use the-d[16G[1G[0Jtest> use the-[15G[1G[0Jtest> use the[14G_database
+
 
 switched to db the_database
 
-todos
-the_database> db.todos.insertOne({ text "Incr
-ease the number of 
-tools in my tool be
+[1G[0Jthe_database> [15Gshow collections
+
+
+[1mtodos[0m
+
+[1G[0Jthe_database> [15Gdb.todos.insertOne()[1G[0Jthe_database> db.todos.insertOne([34G{ text [32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m [32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone[33mdone[39m: fals[33mfalse[39m })
+
 
 Uncaught:
 
 
-> 1 | db.todos.insertOne({ text "Increase the number of tools in my tool belt", d
-one: false })
-    |                           ^
-  2 |e--(21%)
+[1m[31mSyntaxError[0m: Unexpected token, expected "," (1:26)
 
-the_database> db.todos.insertOne({ text "Increase the number of tools in my tool belt", done:
-the_database> db.todos.insertOne({ text "Increase the number of tools in my tool belt",
-the_database> db.todos.insertOne({ text "Increase the number of tools in my tool belt"
-the_database> db.todos.insertOne({ text "Increase the number of tools in my tool belt"
-the_database> db.todos.insertOne({ text "
-the_database> db.todos.insertOne({ text
-2m"Increase the number of tools in my tool belt", done: false })
-the_database> db.todos.insertOne({ text "Increas
-the_database> db.todos.insertOne({ text
-the_database> db.todos.insertOne({ text
+
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39mtodos[33m.[39minsertOne({ text [32m"Increase the number of tools in my tool belt"[39m[33m,[39m done[33m:[39m [36mfalse[39m })
+
+ [90m   |[39m                           [31m[1m^[22m[39m
+
+ [90m 2 |[39m[0m
+
+
+
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[103G[1D[1G[0Jthe_database> db.todos.insertOne[44m([49m{ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[102G[1D[1G[0Jthe_database> db.todos.insertOne([44m{[49m text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })# 
+# 
+# ^[[A^[[A^[[A^[[B^[[B^[[B^C
+# cat typescript
+Script started on 2026-01-07 10:28:09+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="139" LINES="21"]
+# mongosh
+
+]0;mongosh mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	695e355fcf4522db743f118b
+
+Connecting to:		[1m[32mmongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10[0m
+
+Using MongoDB:		undefined
+
+[1m[33mUsing Mongosh[0m:		2.5.10
+
+
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+
+You can opt-out by running the disableTelemetry() command.
+
+
+
+[1G[0J [1G[?2004h[1G[0Jtest> [7Gshow dbs
+
+
+Uncaught 
+[1m[31mMongoServerError[0m[1m[31m[Unauthorized][0m: Command listDatabases requires authentication
+
+[1G[0Jtest> [7Gexit
+
+
+[?2004l# mongus  osh -u root p -p example
+
+]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	695e35a940254f028c3f118b
+
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.10[0m
+
+Using MongoDB:		8.2.3
+
+[1m[33mUsing Mongosh[0m:		2.5.10
+
+
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+
+   [1m[33mThe server generated these startup warnings when booting[0m
+
+   2026-01-07T10:27:03.375+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+
+   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+
+   2026-01-07T10:27:03.757+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+
+   2026-01-07T10:27:03.757+00:00: We suggest setting the contents of sysfsFile to 0.
+
+   2026-01-07T10:27:03.757+00:00: vm.max_map_count is too low
+
+   2026-01-07T10:27:03.757+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+
+[1m[33m------[0m
+
+
+
+[1G[0Jtest> [7Gshow dbs
+
+
+[1madmin[0m         100.00 KiB
+
+[1mconfig[0m         12.00 KiB
+
+[1mlocal[0m          72.00 KiB
+
+[1mthe_database[0m   40.00 KiB
+
+[1G[0Jtest> [7Guse the-da[1G[0Jtest> use the-d[16G[1G[0Jtest> use the-[15G[1G[0Jtest> use the[14G_database
+
+
+switched to db the_database
+
+[1G[0Jthe_database> [15Gshow collections
+
+
+[1mtodos[0m
+
+[1G[0Jthe_database> [15Gdb.todos.insertOne()[1G[0Jthe_database> db.todos.insertOne([34G{ text [32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m [32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m, d[36mdo[39mdone[33mdone[39m: fals[33mfalse[39m })
+
+
+Uncaught:
+
+
+[1m[31mSyntaxError[0m: Unexpected token, expected "," (1:26)
+
+
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39mtodos[33m.[39minsertOne({ text [32m"Increase the number of tools in my tool belt"[39m[33m,[39m done[33m:[39m [36mfalse[39m })
+
+ [90m   |[39m                           [31m[1m^[22m[39m
+
+ [90m 2 |[39m[0m
+
+
+
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[103G[1D[1G[0Jthe_database> db.todos.insertOne[44m([49m{ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[102G[1D[1G[0Jthe_database> db.todos.insertOne([44m{[49m text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[101G[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[100G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({ text [44m[32m"[49mIncrease the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[86G[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[85G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt[44m"[39m[49m, [33mdone[39m: [33mfalse[39m })[41G[1D[1G[0Jthe_database> db.todos.insertOne({ text [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[40G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: [32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m: [33mfalse[39m })[41G[63C
+
 
 {
-  acknowledged: true,
-  insertedId: ObjectId('695e363940254f028c3f118c')
+
+  acknowledged: [33mtrue[39m,
+
+  insertedId: ObjectId([32m'695e363940254f028c3f118c'[39m)
+
 }
 
+[1G[0Jthe_database> [15Gdb.todos.find()
+
+
 [
+
   {
-    _id: ObjectId('695e34f61efceca2b53f118c'),
-    text: 'Write code',
-    done: true
+
+    _id: ObjectId([32m'695e34f61efceca2b53f118c'[39m),
+
+    text: [32m'Write code'[39m,
+
+    done: [33mtrue[39m
+
   },
+
   {
-    _id: ObjectId('695e34f61efceca2b53f118d'),
-    text: 'Learn about containers',
-    done: false
+
+    _id: ObjectId([32m'695e34f61efceca2b53f118d'[39m),
+
+    text: [32m'Learn about containers'[39m,
+
+    done: [33mfalse[39m
+
   },
+
   {
-    _id: ObjectId('695e363940254f028c3f118c'),
-    text: 'Increase the number of tools in my tool belt',
-    done: false
+
+    _id: ObjectId([32m'695e363940254f028c3f118c'[39m),
+
+    text: [32m'Increase the number of tools in my tool belt'[39m,
+
+    done: [33mfalse[39m
+
   }
+
 ]
+
+[1G[0Jthe_database> [15Gexit

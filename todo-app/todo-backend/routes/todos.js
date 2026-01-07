@@ -8,6 +8,27 @@ router.get('/', async (_, res) => {
   res.send(todos);
 });
 
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  const todo = await Todo.findById(id);
+  if (!todo) {
+    return res.sendStatus(404);
+  }
+  res.send(todo);
+});
+
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const todo = await Todo.findById(id);
+  if (!todo) {
+    return res.sendStatus(404);
+  }
+  todo.text = req.body.text !== undefined ? req.body.text : todo.text;
+  todo.done = req.body.done !== undefined ? req.body.done : todo.done;
+  await todo.save();
+  res.send(todo);
+});
+
 /* POST todo to listing. */
 router.post('/', async (req, res) => {
   const todo = await Todo.create({

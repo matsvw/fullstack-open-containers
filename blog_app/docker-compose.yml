@@ -1,0 +1,22 @@
+services:
+  backend:
+    extends:
+      file: ./part_7_blogs_bff/docker-compose.yml
+      service: app
+  frontend:
+    extends:
+      file: ./part_7_blogs_ui/docker-compose.yml
+      service: app
+    depends_on:
+      - backend
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8081:80
+    container_name: blogs-reverse-proxy
+    depends_on:
+      - frontend
+  debug-helper:
+    image: busybox          
